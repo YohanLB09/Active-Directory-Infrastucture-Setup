@@ -20,7 +20,7 @@ In this guided lab, we will setup a domain environment in Azure by setting up a 
 <h2>High-Level Deployment and Configuration Steps</h2>
 
 - Step 1: Create a Resource Group
-- Step 2
+- Step 2: Create a Virtual Network and Subnet 
 - Step 3
 - Step 4
 
@@ -29,20 +29,30 @@ In this guided lab, we will setup a domain environment in Azure by setting up a 
 <h3>Step 1: Create a Resource Group</h3>
 
 <p>
-<img src="" height="100%" width="100%" alt="Configuration step"/>
+<img src="https://i.imgur.com/h3N5bbe.png" height="100%" width="100%" alt="Configuration step"/>
 </p>
 <p>
+-Once logged in to your Azure account, browse to "Resource groups" from the navigation pane.
 
+-Click on "Create".
+
+-Make sure the correct Subscription is choosen.
+
+-Enter a Resource group name.
+
+-Choose the appropriate region depending on your needs
+
+-Click on "Review + Create" to complete the configuration process.
 </p>
 <br />
 
 
 
 
-<h3></h3>
+<h3>Step 2: Create a Virtual Network and Subnet</h3>
 
 <p>
-<img src="https://i.imgur.com/LyN2qN0.png" height="100%" width="100%" alt="Configuration step"/>
+<img src="" height="100%" width="100%" alt="Configuration step"/>
 </p>
 <p>
 
