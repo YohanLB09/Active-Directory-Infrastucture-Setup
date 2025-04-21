@@ -3,7 +3,7 @@
 </p>
 
 <h1>Active Directory - Infrastructure Setup</h1>
-In this guided lab, we will setup a domain environment by setting up a domain controller and a client machine which will be able to communicate to one another.<br />
+In this guided lab, we will setup a domain environment in Azure by setting up a domain controller and a client machine which will be able to communicate to one another.<br />
 
 <h2>Environments and Technologies Used</h2>
 
@@ -178,3 +178,14 @@ In this guided lab, we will setup a domain environment by setting up a domain co
 
 </p>
 <br />
+
+
+
+
+<h2>Active Directory Infrastructure Setup Completed!</h2>
+
+<b>We've successfully deployed a domain environment, establishing a functional domain controller and a client machine configured to communicate within the same Azure virtual network. This foundational setup provides the necessary groundwork for exploring more advanced domain-related tasks in subsequent labs. Remember to stop the VMs in the Azure Portal when not in use to manage costs effectively.</b>
+<br />
+<br />
+</p>
+
