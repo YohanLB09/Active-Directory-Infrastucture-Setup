@@ -78,7 +78,7 @@ In this guided lab, we will setup a domain environment in Azure by setting up a 
 <h3></h3>
 
 <p>
-<img src="https://i.imgur.com/LyN2qN0.png" height="100%" width="100%" alt="Configuration step"/>
+<img src="" height="100%" width="100%" alt="Configuration step"/>
 </p>
 <p>
 
