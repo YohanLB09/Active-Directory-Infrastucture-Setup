@@ -29,7 +29,7 @@ In this guided lab, we will setup a domain environment by setting up a domain co
 <h3>Step 1: Create a Resource Group</h3>
 
 <p>
-<img src="https://i.imgur.com/LyN2qN0.png" height="100%" width="100%" alt="Configuration step"/>
+<img src="" height="100%" width="100%" alt="Configuration step"/>
 </p>
 <p>
 
