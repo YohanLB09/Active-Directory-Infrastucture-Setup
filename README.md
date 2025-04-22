@@ -58,7 +58,7 @@ In this guided lab, we will setup a domain environment in Azure by setting up a 
 <h3>Step 2: Create a Virtual Network and Subnet</h3>
 
 <p>
-<img src="" height="100%" width="100%" alt="Configuration step"/>
+<img src="https://i.imgur.com/RWi9J3w.png" height="100%" width="100%" alt="Configuration step"/>
 </p>
 <p>
 -Browse to "Virtual Networks" from the navigation pane.
