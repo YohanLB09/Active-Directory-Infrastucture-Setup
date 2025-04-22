@@ -112,10 +112,10 @@ The virtual network and subnet provide an isolated network space in Azure, enabl
 
 
 
-<h3>Set a static IP address for the Domain Controller VM</h3>
+<h3>Step 4: Set a static IP address for the Domain Controller VM</h3>
 
 <p>
-<img src="" height="100%" width="100%" alt="Configuration step"/>
+<img src="https://i.imgur.com/SczcnpO.png" height="100%" width="100%" alt="Configuration step"/>
 </p>
 <p>
 -From within the Domain controller VM's settings in Azure, select "Networking" -> "Network settings" -> click on the "link" under Network interface / IP configuration to access the NIC settings -> "ipconfig1" -> Next to Allocation, select "Static" ->  "Save".
@@ -123,20 +123,31 @@ The virtual network and subnet provide an isolated network space in Azure, enabl
 -Additionally, take note of the Domain Controller VM's private IP address, as we will need it for later (use Notepad).
 
 We set a static IP address for the Domain Controller VM because the client VM needs a reliable and unchanging address to consistently locate the domain services, especially for DNS resolution which is crucial for joining the domain.
-
 </p>
 <br />
 
 
 
 
-<h3></h3>
+<h3>Step 5: Disable the Domain Controller VM's Firewall</h3>
 
 <p>
-<img src="" height="100%" width="100%" alt="Configuration step"/>
+<img src="https://i.imgur.com/tR8CUix.png" height="100%" width="100%" alt="Configuration step"/>
 </p>
 <p>
+-Connect to the domain controller VM using its public IP address via Remote Desktop Connection.
+</p>
+<br />
 
+
+<p>
+<img src="https://i.imgur.com/7iIjcm7.png" height="100%" width="100%" alt="Configuration step"/>
+</p>
+<p>
+-Once logged in, use the "Windows key" + "R", then type "wf.msc" (shortcut to access the Windows Defender firewall).
+
+-From there, disable the firewall (all profiles).
+This is not best practice, it's only for the purpose of this lab, for testing purposes (tbc).
 </p>
 <br />
 
