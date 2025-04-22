@@ -77,10 +77,30 @@ The virtual network and subnet provide an isolated network space in Azure, enabl
 <h3>Step 3: Create a Domain controller VM</h3>
 
 <p>
-<img src="" height="100%" width="100%" alt="Configuration step"/>
+<img src="https://i.imgur.com/OdBIFfT.png" height="100%" width="100%" alt="Configuration step"/>
 </p>
 <p>
+-Browse to "Virtual machines" from the navigation pane.
 
+-Click on "Create".
+
+-Select the previously created Resource Group.
+
+-Create a name for the Domain controller VM.
+
+-Pick the same Region as the Resource group and Virtual network.
+
+-For the image, choose: "Windows Server 2022 Datacenter: Azure Edition - x64 Gen2".
+
+-Select a VM size; having at least 2 vcpus and 8 GiB memory is recommended.
+
+-Create a username and a password (write them down in Notepad for futur use).
+
+-Leave the other options at their default configuration and move on to the Networking section.
+
+-In the Networking section, select the previously created Virtual network.
+
+-Leave all the other options at their default configuration and click on "Review + create".
 </p>
 <br />
 
