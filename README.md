@@ -58,7 +58,7 @@ In this guided lab, we will setup a domain environment in Azure by setting up a 
 <h3>Step 2: Create a Virtual Network and Subnet</h3>
 
 <p>
-<img src="https://i.imgur.com/KlWmQ69.png" height="100%" width="100%" alt="Configuration step"/>
+<img src="" height="100%" width="100%" alt="Configuration step"/>
 </p>
 <p>
 -Browse to "Virtual Networks" from the navigation pane.
@@ -116,7 +116,7 @@ The virtual network and subnet provide an isolated network space in Azure, enabl
 <h3>Step 4: Set a static IP address for the Domain Controller VM</h3>
 
 <p>
-<img src="https://i.imgur.com/SczcnpO.png" height="100%" width="100%" alt="Configuration step"/>
+<img src="" height="100%" width="100%" alt="Configuration step"/>
 </p>
 <p>
 -From within the Domain controller VM's settings in Azure, select "Networking" -> "Network settings" -> click on the "link" under Network interface / IP configuration to access the NIC settings -> "ipconfig1" -> Next to Allocation, select "Static" ->  "Save".
@@ -158,7 +158,7 @@ This is not best practice, it's only for the purpose of this lab, for testing pu
 <h3>Step 6: Create a Client VM</h3>
 
 <p>
-<img src="https://i.imgur.com/eARDjKc.png" height="100%" width="100%" alt="Configuration step"/>
+<img src="" height="100%" width="100%" alt="Configuration step"/>
 </p>
 <p>
 -Back in Azure, browse to "Virtual machines" from the navigation pane.
@@ -191,7 +191,7 @@ This is not best practice, it's only for the purpose of this lab, for testing pu
 <h3>Step 7: Configure the client VM's DNS settings</h3>
 
 <p>
-<img src="https://i.imgur.com/fOuZjAp.png" height="100%" width="100%" alt="Configuration step"/>
+<img src="" height="100%" width="100%" alt="Configuration step"/>
 </p>
 <p>
 -From within the client VM settings, under Networking, navigate to "Network settings" -> click on the "link" under Network interface / IP configuration to access the NIC settings -> click on "DNS servers" on the left -> under DNS servers, select "Custom" -> paste the Domain Controller VM private IP address -> click on "Save".
@@ -206,7 +206,7 @@ Configuring the client VM's DNS settings with the domain controller's private IP
 <h3>Step 8: Restart the client</h3>
 
 <p>
-<img src="https://i.imgur.com/Wx46q4S.png" height="100%" width="100%" alt="Configuration step"/>
+<img src="" height="100%" width="100%" alt="Configuration step"/>
 </p>
 <p>
 -Restart the Client VM
