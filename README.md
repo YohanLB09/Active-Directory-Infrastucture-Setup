@@ -23,10 +23,10 @@ In this guided lab, we will setup a domain environment in Azure by setting up a 
 - Step 2: Create a Virtual Network and Subnet 
 - Step 3: Create a Domain controller VM
 - Step 4: Set a static IP address for the Domain Controller VM
-- Step 5: 
-- Step 6:
-- Step 7:
-- Step 8:
+- Step 5: Disable the Domain Controller VM's Firewall
+- Step 6: Create a Client VM
+- Step 7: Configure the client VM's DNS settings
+- Step 8: Restart the client
 - Step 9:
 
 <h2>Deployment and Configuration Steps</h2>
@@ -154,39 +154,62 @@ This is not best practice, it's only for the purpose of this lab, for testing pu
 
 
 
-<h3></h3>
+<h3>Step 6: Create a Client VM</h3>
 
 <p>
-<img src="" height="100%" width="100%" alt="Configuration step"/>
+<img src="https://i.imgur.com/eARDjKc.png" height="100%" width="100%" alt="Configuration step"/>
 </p>
 <p>
+-Back in Azure, browse to "Virtual machines" from the navigation pane.
 
+-Click on "Create".
+
+-Select the previously created Resource Group.
+
+-Create a name for the client VM.
+
+-Pick the same Region as the Resource group and Virtual network.
+
+-For the image, choose: "Windows 10 Pro version 22H2".
+
+-Select a VM size; having at least 2 vcpus and 8 GiB memory is also recommended for this VM.
+
+-Create a username and a password for the Windows VM (write them down in Notepad for futur use).
+
+-Leave the other options at their default configuration and move on to the Networking section.
+
+-In the Networking section, select the previously created Virtual network.
+
+-Leave all the other options at their default configuration and click on "Review + create".
 </p>
 <br />
 
 
 
 
-<h3></h3>
+<h3>Step 7: Configure the client VM's DNS settings</h3>
 
 <p>
-<img src="" height="100%" width="100%" alt="Configuration step"/>
+<img src="https://i.imgur.com/fOuZjAp.png" height="100%" width="100%" alt="Configuration step"/>
 </p>
 <p>
+-From within the client VM settings, under Networking, navigate to "Network settings" -> click on the "link" under Network interface / IP configuration to access the NIC settings -> click on "DNS servers" on the left -> under DNS servers, select "Custom" -> paste the Domain Controller VM private IP address -> click on "Save".
 
+Configuring the client VM's DNS settings with the domain controller's private IP address directs the client to the domain controller for name resolution, which is essential for joining the domain and accessing domain resources.
 </p>
 <br />
 
 
 
 
-<h3></h3>
+<h3>Step 8: Restart the client</h3>
 
 <p>
 <img src="" height="100%" width="100%" alt="Configuration step"/>
 </p>
 <p>
-
+-Restart the Client VM
+Restarting the client VM ensures it immediately clears its existing DNS resolver cache and requests a new DHCP lease. This new lease will then provide and consistently apply the domain controller's IP address as the primary DNS server for all subsequent name resolution requests
 </p>
 <br />
 
