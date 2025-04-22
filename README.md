@@ -205,10 +205,11 @@ Configuring the client VM's DNS settings with the domain controller's private IP
 <h3>Step 8: Restart the client</h3>
 
 <p>
-<img src="" height="100%" width="100%" alt="Configuration step"/>
+<img src="https://i.imgur.com/Wx46q4S.png" height="100%" width="100%" alt="Configuration step"/>
 </p>
 <p>
 -Restart the Client VM
+  
 Restarting the client VM ensures it immediately clears its existing DNS resolver cache and requests a new DHCP lease. This new lease will then provide and consistently apply the domain controller's IP address as the primary DNS server for all subsequent name resolution requests
 </p>
 <br />
