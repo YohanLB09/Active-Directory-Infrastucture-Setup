@@ -22,7 +22,12 @@ In this guided lab, we will setup a domain environment in Azure by setting up a 
 - Step 1: Create a Resource Group
 - Step 2: Create a Virtual Network and Subnet 
 - Step 3: Create a Domain controller VM
-- Step 4
+- Step 4: Set a static IP address for the Domain Controller VM
+- Step 5: 
+- Step 6:
+- Step 7:
+- Step 8:
+- Step 9:
 
 <h2>Deployment and Configuration Steps</h2>
 
@@ -107,12 +112,17 @@ The virtual network and subnet provide an isolated network space in Azure, enabl
 
 
 
-<h3></h3>
+<h3>Set a static IP address for the Domain Controller VM</h3>
 
 <p>
 <img src="" height="100%" width="100%" alt="Configuration step"/>
 </p>
 <p>
+-From within the Domain controller VM's settings in Azure, select "Networking" -> "Network settings" -> click on the "link" under Network interface / IP configuration to access the NIC settings -> "ipconfig1" -> Next to Allocation, select "Static" ->  "Save".
+
+-Additionally, take note of the Domain Controller VM's private IP address, as we will need it for later (use Notepad).
+
+We set a static IP address for the Domain Controller VM because the client VM needs a reliable and unchanging address to consistently locate the domain services, especially for DNS resolution which is crucial for joining the domain.
 
 </p>
 <br />
