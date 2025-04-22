@@ -158,7 +158,7 @@ This is not best practice, it's only for the purpose of this lab, for testing pu
 <h3>Step 6: Create a Client VM</h3>
 
 <p>
-<img src="" height="100%" width="100%" alt="Configuration step"/>
+<img src="https://i.imgur.com/3bAbdIu.png" height="100%" width="100%" alt="Configuration step"/>
 </p>
 <p>
 -Back in Azure, browse to "Virtual machines" from the navigation pane.
