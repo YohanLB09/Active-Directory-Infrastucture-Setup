@@ -116,7 +116,7 @@ The virtual network and subnet provide an isolated network space in Azure, enabl
 <h3>Step 4: Set a static IP address for the Domain Controller VM</h3>
 
 <p>
-<img src="" height="100%" width="100%" alt="Configuration step"/>
+<img src="https://i.imgur.com/en3mRbS.png" height="100%" width="100%" alt="Configuration step"/>
 </p>
 <p>
 -From within the Domain controller VM's settings in Azure, select "Networking" -> "Network settings" -> click on the "link" under Network interface / IP configuration to access the NIC settings -> "ipconfig1" -> Next to Allocation, select "Static" ->  "Save".
