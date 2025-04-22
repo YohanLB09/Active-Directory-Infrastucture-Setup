@@ -141,7 +141,7 @@ We set a static IP address for the Domain Controller VM because the client VM ne
 
 
 <p>
-<img src="https://i.imgur.com/7iIjcm7.png" height="100%" width="100%" alt="Configuration step"/>
+<img src="https://i.imgur.com/atfLXeH.png" height="100%" width="100%" alt="Configuration step"/>
 </p>
 <p>
 -Once logged in, use the "Windows key" + "R", then type "wf.msc" (shortcut to access the Windows Defender firewall).
