@@ -67,7 +67,7 @@ In this guided lab, we will setup a domain environment in Azure by setting up a 
 
 -Leave all other settings as default and click on "Review + Create".
 
-Explanation: What is the purpose of doing this? 
+The virtual network and subnet provide an isolated network space in Azure, enabling communication between hosts within the same logical network.
 </p>
 <br />
 
