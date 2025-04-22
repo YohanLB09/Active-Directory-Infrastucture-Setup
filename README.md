@@ -27,7 +27,8 @@ In this guided lab, we will setup a domain environment in Azure by setting up a 
 - Step 6: Create a Client VM
 - Step 7: Configure the client VM's DNS settings
 - Step 8: Restart the client
-- Step 9:
+- Step 9: Ping the Domain Controller VM from the client VM
+- Step 10: Verify the Client VM's IP configurations
 
 <h2>Deployment and Configuration Steps</h2>
 
@@ -217,52 +218,28 @@ Restarting the client VM ensures it immediately clears its existing DNS resolver
 
 
 
-<h3></h3>
+<h3>Step 9:Ping the Domain Controller VM from the client VM</h3>
 
 <p>
-<img src="" height="100%" width="100%" alt="Configuration step"/>
+<img src="https://i.imgur.com/OKrz1Ub.png" height="100%" width="100%" alt="Configuration step"/>
 </p>
 <p>
+-Login to the Client VM, navigate to PowerShell and ping the Domain Controller VM using its private IP address; "ping 10.0.0.4" (yours may be different). 
 
-</p>
-<br />
-
-
-
-
-<h3></h3>
-
-<p>
-<img src="" height="100%" width="100%" alt="Configuration step"/>
-</p>
-<p>
-
+This is to ensure that the client VM can effectively communicate with the Domain Controller which is on the same Virtual Network. If your are not able to successfully ping the Domain controller VM from the Client VM, ensure the Domain Controller VM's firewall isn't blocking incoming ICMP requests and verify both VMs are connected to the same Virtual Network.
 </p>
 <br />
 
 
 
 
-<h3></h3>
+<h3>Step 10: Verify the Client VM's IP configurations</h3>
 
 <p>
-<img src="" height="100%" width="100%" alt="Configuration step"/>
+<img src="https://i.imgur.com/mwX9oHi.png" height="100%" width="100%" alt="Configuration step"/>
 </p>
 <p>
-
-</p>
-<br />
-
-
-
-
-<h3></h3>
-
-<p>
-<img src="" height="100%" width="100%" alt="Configuration step"/>
-</p>
-<p>
-
+-From within PowerShell, use the "ipconfig /all" command to ensure that the client VM's DNS Server is configured with the Domain Controller VM's private IP address.
 </p>
 <br />
 
