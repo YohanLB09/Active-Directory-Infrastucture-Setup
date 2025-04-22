@@ -191,7 +191,7 @@ This is not best practice, it's only for the purpose of this lab, for testing pu
 <h3>Step 7: Configure the client VM's DNS settings</h3>
 
 <p>
-<img src="" height="100%" width="100%" alt="Configuration step"/>
+<img src="https://i.imgur.com/sAMoDRq.png" height="100%" width="100%" alt="Configuration step"/>
 </p>
 <p>
 -From within the client VM settings, under Networking, navigate to "Network settings" -> click on the "link" under Network interface / IP configuration to access the NIC settings -> click on "DNS servers" on the left -> under DNS servers, select "Custom" -> paste the Domain Controller VM private IP address -> click on "Save".
@@ -206,7 +206,7 @@ Configuring the client VM's DNS settings with the domain controller's private IP
 <h3>Step 8: Restart the client</h3>
 
 <p>
-<img src="" height="100%" width="100%" alt="Configuration step"/>
+<img src="https://i.imgur.com/44J34LP.png" height="100%" width="100%" alt="Configuration step"/>
 </p>
 <p>
 -Restart the Client VM
