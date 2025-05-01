@@ -3,7 +3,7 @@
 </p>
 
 <h1>Active Directory - Infrastructure Setup</h1>
-In this guided lab, we will setup a domain environment in Azure by setting up a domain controller and a client machine which will be able to communicate to one another.<br />
+In this guided lab, we will setup a domain environment in Azure by setting up a Server and a Client machine which will be able to communicate to one another.<br />
 
 <h2>Environments and Technologies Used</h2>
 
@@ -21,13 +21,13 @@ In this guided lab, we will setup a domain environment in Azure by setting up a 
 
 - Step 1: Create a Resource Group
 - Step 2: Create a Virtual Network and Subnet 
-- Step 3: Create a Domain controller VM
-- Step 4: Set a static IP address for the Domain Controller VM
-- Step 5: Disable the Domain Controller VM's Firewall
+- Step 3: Create a Server VM
+- Step 4: Set a static IP address for the Server VM
+- Step 5: Disable the Server VM's Firewall
 - Step 6: Create a Client VM
 - Step 7: Configure the client VM's DNS settings
 - Step 8: Restart the client
-- Step 9: Ping the Domain Controller VM from the client VM
+- Step 9: Ping the Server VM from the client VM
 - Step 10: Verify the Client VM's IP configurations
 
 <h2>Deployment and Configuration Steps</h2>
@@ -80,7 +80,7 @@ The virtual network and subnet provide an isolated network space in Azure, enabl
 
 
 
-<h3>Step 3: Create a Domain controller VM</h3>
+<h3>Step 3: Create a Server VM</h3>
 
 <p>
 <img src="https://i.imgur.com/OdBIFfT.png" height="100%" width="100%" alt="Configuration step"/>
@@ -92,7 +92,7 @@ The virtual network and subnet provide an isolated network space in Azure, enabl
 
 -Select the previously created Resource Group.
 
--Create a name for the Domain controller VM.
+-Create a name for the Server VM (e.g.: dc-1).
 
 -Pick the same Region as the Resource group and Virtual network.
 
@@ -108,37 +108,37 @@ The virtual network and subnet provide an isolated network space in Azure, enabl
 
 -Leave all the other options at their default configuration and click on "Review + create".
 
-Although named "Domain Controller VM," this virtual machine is currently just a standard server. The actual configuration of this VM as a domain controller will be performed in the subsequent lab.
+This step creates an Azure virtual machine using Windows Server 2022 within your existing resource group and virtual network. This VM, with specified size and initial credentials, is being provisioned to later be configured as the domain controller.
 </p>
 <br />
 
 
 
 
-<h3>Step 4: Set a static IP address for the Domain Controller VM</h3>
+<h3>Step 4: Set a static IP address for the Server VM</h3>
 
 <p>
 <img src="https://i.imgur.com/en3mRbS.png" height="100%" width="100%" alt="Configuration step"/>
 </p>
 <p>
--From within the Domain controller VM's settings in Azure, select "Networking" -> "Network settings" -> click on the "link" under Network interface / IP configuration to access the NIC settings -> "ipconfig1" -> Next to Allocation, select "Static" ->  "Save".
+-From within the Server VM's settings in Azure, select "Networking" -> "Network settings" -> click on the "link" under Network interface / IP configuration to access the NIC settings -> "ipconfig1" -> Next to Allocation, select "Static" ->  "Save".
 
--Additionally, take note of the Domain Controller VM's private IP address, as we will need it for later (use Notepad).
+-Additionally, take note of the Server VM's private IP address, as we will need it for later (use Notepad).
 
-We set a static IP address for the Domain Controller VM because the client VM needs a reliable and unchanging address to consistently locate the domain services, especially for DNS resolution which is crucial for joining the domain.
+We set a static IP address for Server VM because the client VM needs a reliable and unchanging address to consistently locate the domain services, especially for DNS resolution which is crucial for joining the domain.
 </p>
 <br />
 
 
 
 
-<h3>Step 5: Disable the Domain Controller VM's Firewall</h3>
+<h3>Step 5: Disable the Server VM's Firewall</h3>
 
 <p>
 <img src="https://i.imgur.com/tR8CUix.png" height="100%" width="100%" alt="Configuration step"/>
 </p>
 <p>
--Connect to the domain controller VM using its public IP address via Remote Desktop Connection.
+-Connect to the Server VM using its public IP address via Remote Desktop Connection.
 </p>
 <br />
 
@@ -199,7 +199,7 @@ For the specific testing objectives of this lab only, we are deviating from secu
 <p>
 -From within the client VM settings, under Networking, navigate to "Network settings" -> click on the "link" under Network interface / IP configuration to access the NIC settings -> click on "DNS servers" on the left -> under DNS servers, select "Custom" -> paste the Domain Controller VM private IP address -> click on "Save".
 
-Configuring the client VM's DNS settings with the domain controller VM's private IP address directs the client to the domain controller VM for name resolution, which is essential for joining the domain and accessing domain resources.
+Configuring the client VM's DNS settings with the Server VM's private IP address directs the client to the Server for name resolution, which is essential for joining the domain and accessing domain resources.
 </p>
 <br />
 
@@ -214,14 +214,14 @@ Configuring the client VM's DNS settings with the domain controller VM's private
 <p>
 -Restart the Client VM
   
-Restarting the client VM ensures it immediately clears its existing DNS resolver cache and requests a new DHCP lease. This new lease will then provide and consistently apply the domain controller VM's IP address as the primary DNS server for all subsequent name resolution requests
+Restarting the client VM ensures it immediately clears its existing DNS resolver cache and requests a new DHCP lease. This new lease will then provide and consistently apply the Server VM's IP address as the primary DNS server for all subsequent name resolution requests.
 </p>
 <br />
 
 
 
 
-<h3>Step 9:Ping the Domain Controller VM from the client VM</h3>
+<h3>Step 9: Ping the Server VM from the client VM</h3>
 
 <p>
 <img src="https://i.imgur.com/OKrz1Ub.png" height="100%" width="100%" alt="Configuration step"/>
@@ -229,7 +229,7 @@ Restarting the client VM ensures it immediately clears its existing DNS resolver
 <p>
 -Login to the Client VM, navigate to PowerShell and ping the Domain Controller VM using its private IP address; "ping 10.0.0.4" (yours may be different). 
 
-This is to ensure that the client VM can effectively communicate with the Domain Controller VM which is on the same Virtual Network. If your are not able to successfully ping the Domain controller VM from the Client VM, ensure the Domain Controller VM's firewall isn't blocking incoming ICMP requests and verify both VMs are connected to the same Virtual Network.
+This is to ensure that the client VM can effectively communicate with the Server VM which is on the same Virtual Network. If your are not able to successfully ping the Server VM from the Client VM, ensure the Server VM's firewall isn't blocking incoming ICMP requests and verify both VMs are connected to the same Virtual Network.
 </p>
 <br />
 
@@ -242,7 +242,7 @@ This is to ensure that the client VM can effectively communicate with the Domain
 <img src="https://i.imgur.com/mwX9oHi.png" height="100%" width="100%" alt="Configuration step"/>
 </p>
 <p>
--From within PowerShell, use the "ipconfig /all" command to ensure that the client VM's DNS Server is configured with the Domain Controller VM's private IP address.
+-From within PowerShell, use the "ipconfig /all" command to ensure that the client VM's DNS Server is configured with the Server VM's private IP address.
 </p>
 <br />
 
@@ -251,7 +251,7 @@ This is to ensure that the client VM can effectively communicate with the Domain
 
 <h2>Active Directory Infrastructure Setup Completed!</h2>
 
-<b>We've successfully deployed the foundational virtual machine infrastructure, establishing a domain controller VM and a client VM within the same Azure virtual network, configured for basic communication. It's important to note that this lab has only prepared the groundwork; the actual deployment and configuration of the domain environment itself will be the focus of the next lab. Remember to stop the VMs in the Azure Portal when not in use to manage costs effectively.</b>
+<b>We've successfully deployed the foundational virtual machine infrastructure, establishing a Server VM that will eventually be promoted as a Domain controller and a Client VM within the same Azure virtual network, configured for basic communication. (Next lab description). Remember to stop the VMs in the Azure Portal when not in use to manage costs effectively.</b>
 <br />
 <br />
 </p>
