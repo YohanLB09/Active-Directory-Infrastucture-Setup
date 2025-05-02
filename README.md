@@ -30,7 +30,7 @@ In this guided lab, we will setup a domain environment in Azure by setting up a 
 - Step 9: Ping the Server VM from the client VM
 - Step 10: Verify the Client VM's IP configurations
 
-<h2>Deployment and Configuration Steps</h2>
+<h2>Project Walkthrough</h2>
 
 <h3>Step 1: Create a Resource Group</h3>
 
