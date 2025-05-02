@@ -251,7 +251,8 @@ This is to ensure that the client VM can effectively communicate with the Server
 
 <h2>Active Directory Infrastructure Setup Completed!</h2>
 
-<b>We've successfully deployed the foundational virtual machine infrastructure, establishing a Server VM that will eventually be promoted as a Domain controller and a Client VM within the same Azure virtual network, configured for basic communication. In the next lab found [here](https://github.com/YohanLB09/Active-Directory-Deployment-and-Configuration), we will deploy an Active Directory environment, and configure a Domain with Organizational Units (OUs) where we will create and add users to it. Remember to stop the VMs in the Azure Portal when not in use to manage costs effectively.</b>
+<b>We've successfully deployed the foundational virtual machine infrastructure, establishing a Server VM that will eventually be promoted as a Domain controller and a Client VM within the same Azure virtual network, configured for basic communication. 
+In the next lab found [here](https://github.com/YohanLB09/Active-Directory-Deployment-and-Configuration), we will deploy an Active Directory environment, and configure a Domain with Organizational Units (OUs) where we will create and add users to it. Remember to stop the VMs in the Azure Portal when not in use to manage costs effectively.</b>
 <br />
 <br />
 </p>
